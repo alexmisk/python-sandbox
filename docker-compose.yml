@@ -1,0 +1,18 @@
+---
+version: "2.1"
+services:
+  python-sandbox:
+    image: alexmisk/python-sandbox
+    container_name: python-sandbox
+    hostname: python-sandbox
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PASSWORD_ACCESS=true
+      - TZ=Europe/Moscow
+      - USER_PASSWORD=pass
+      - USER_NAME=user
+      - SUDO_ACCESS=true
+    ports:
+      - 2222:2222
+    restart: unless-stopped
